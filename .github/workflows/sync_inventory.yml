@@ -24,5 +24,5 @@ jobs:
           pip install dropbox pandas openpyxl requests
 
       - name: Inventar-Sync ausführen
-        run: python sync_inventory.py
+        run: python sailloft-inventory-sync.py
 
