@@ -1,28 +1,2 @@
-name: Sync Inventory
 
-on:
-  schedule:
-    - cron: "*/5 * * * *"  # Führt den Workflow alle 5 Minuten aus
-  workflow_dispatch:       # Ermöglicht manuelles Auslösen
-
-jobs:
-  sync:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Repository auschecken
-        uses: actions/checkout@v3
-
-      - name: Python 3.9 einrichten
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.9"
-
-      - name: Abhängigkeiten installieren
-        run: |
-          python -m pip install --upgrade pip
-          pip install dropbox pandas openpyxl requests
-
-      - name: Inventar-Sync ausführen
-        run: python sailloft-inventory-sync.py
 
